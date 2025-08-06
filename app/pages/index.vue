@@ -98,7 +98,7 @@ async function loadAndFilter() {
     try {
         const fileName =
             selectedList.value === 'russian'
-                ? '/test.txt'
+                ? '/russianUTF-8.txt'
                 : '/englishUTF-8.txt'
         const res = await fetch(fileName)
         const text = await res.text()

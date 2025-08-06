@@ -1,6 +1,10 @@
 # <span style="background-color: #C01012; color: #FFFFFF; padding-right: 100px">#C01012</span> (COLOR)
 ## Tool to search for spellable words in hexadecimal (HEX) color codes
 
+Idea for this project was inspired by [@aarexer post on X](https://x.com/aarexer/status/1938841036274413999) (formally known as Twitter) and an older project I worked on - [car-p18s](https://github.com/ebolblga/car-p18s).
+
+## Introduction
+
 > The hex-color CSS data type is a notation for describing the hexadecimal color syntax of an sRGB color using its primary color components (red, green, blue) written as hexadecimal numbers, as well as its transparency.
 
 Source: [MDN Web Docs <hex-color>](https://developer.mozilla.org/en-US/docs/Web/CSS/hex-color)
@@ -64,15 +68,23 @@ This mapping was custom made and inspired by:
 | `11`    | `N`           |          |
 | `12`    | `R`           |          |
 
-### Examples
+If you want to expand this table to other alphabets, contributions are welcome! Just add them to `/app/pages/index.vue`.
+
+## Word sources
+- A text file containing 479k English words: [english-words](https://github.com/dwyl/english-words)
+- A text file containing 1.5m Russian words: [russian-words](https://github.com/danakt/russian-words)
+- List of 2.8k Russian swear words: [2yxa](https://doc.2yxa.mobi/mat/)
+- "Funny" words from funny word generator I worked on previously: [Ahaha-hehehe](https://github.com/ebolblga/Ahaha-hehehe)
+
+## Examples
 Now as a web designer you can put secret funny words on your web pages, like:
 - ass #a55
 - Bathesda #Ba74e5da
-- ебосос #eb0c0c
+- ебасос #ebac0c
 
 Just look, how beautiful it is on [Realtime Colors](https://www.realtimecolors.com/?colors=aa5555-1a0c0c-eb0c0c-931515-Ba74e5&fonts=Inter-Inter)
 
-### Setup with [Node.js](https://nodejs.org/en/)
+## Setup with [Node.js](https://nodejs.org/en/)
 If you want to try changing the mapping
 ```bash
 # install yarn
