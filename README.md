@@ -64,6 +64,14 @@ This mapping was custom made and inspired by:
 | `11`    | `N`           |          |
 | `12`    | `R`           |          |
 
+### Examples
+Now as a web designer you can put secret funny words on your web pages, like:
+- ass #a55
+- Bathesda #Ba74e5da
+- ебосос #eb0c0c
+
+Just look, how beautiful it is on [Realtime Colors](https://www.realtimecolors.com/?colors=aa5555-1a0c0c-eb0c0c-931515-Ba74e5&fonts=Inter-Inter)
+
 ### Setup with [Node.js](https://nodejs.org/en/)
 If you want to try changing the mapping
 ```bash

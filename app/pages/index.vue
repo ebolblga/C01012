@@ -1,6 +1,15 @@
 <script setup lang="ts">
-import type { Result } from '@types'
+import { useLocalStorage } from '@vueuse/core'
+import { type Result, WordList } from '@types'
 
+useSeoMeta({
+    title: 'C01012 (COLOR)',
+})
+
+const selectedList = useLocalStorage<WordList>(
+    'selected-language',
+    WordList.english
+)
 const results = ref<Result[]>([])
 
 const mapping: Record<string, string> = {
@@ -81,9 +90,17 @@ const mapping: Record<string, string> = {
 
 const allowedLengths = [3, 4, 6, 8]
 
+onMounted(() => {
+    loadAndFilter()
+})
+
 async function loadAndFilter() {
     try {
-        const res = await fetch('/russianUTF-8.txt')
+        const fileName =
+            selectedList.value === 'russian'
+                ? '/test.txt'
+                : '/englishUTF-8.txt'
+        const res = await fetch(fileName)
         const text = await res.text()
         const words = text
             .split(/\r?\n/)
@@ -104,6 +121,8 @@ async function loadAndFilter() {
                 tokens.push(symbol)
             }
 
+            // console.log(word, tokens)
+
             if (!valid) continue
             const hexBody = tokens.join('')
             if (!allowedLengths.includes(hexBody.length)) continue
@@ -116,14 +135,49 @@ async function loadAndFilter() {
         console.error('Error loading or parsing file:', err)
     }
 }
+
+function normalizeHex(rawHex: string): string {
+    let hex = rawHex.replace(/^#/, '').toLowerCase()
+    if (!allowedLengths.includes(hex.length)) {
+        throw new Error(`Invalid hex length: ${hex.length}`)
+    }
+
+    // expand 3 → 6, 4 → 8
+    if (hex.length === 3 || hex.length === 4) {
+        hex = hex
+            .split('')
+            .map((ch: string) => ch + ch) // e.g. 'f' → 'ff'
+            .join('')
+    }
+
+    return `#${hex}`
+}
+
+function copyHex(rawHex: string): void {
+    let normHex
+    try {
+        normHex = normalizeHex(rawHex)
+    } catch (e) {
+        normHex = rawHex.toLowerCase()
+    }
+
+    navigator.clipboard.writeText(normHex)
+}
 </script>
 <template>
     <div class="p-6">
-        <button
-            @click="loadAndFilter"
-            class="px-4 py-2 text-text rounded transition">
-            Load & Filter
-        </button>
+        <div class="mb-4">
+            <label for="list-select" class="mr-2 font-medium"
+                >Select List:</label
+            >
+            <select
+                id="list-select"
+                v-model="selectedList"
+                class="px-2 py-1 border rounded">
+                <option value="russian">Russian</option>
+                <option value="english">English</option>
+            </select>
+        </div>
 
         <table
             v-if="results.length"
@@ -135,11 +189,32 @@ async function loadAndFilter() {
                 </tr>
             </thead>
             <tbody>
-                <tr
-                    v-for="(item, index) in results"
-                    :key="index"
-                    :style="{ backgroundColor: item.hex }">
-                    <td class="border px-4 py-2">{{ item.hex }}</td>
+                <tr v-for="(item, index) in results" :key="index">
+                    <td class="border px-4 py-2">
+                        <div class="flex items-center">
+                            <!-- Hex text -->
+                            <span>{{ item.hex }}</span>
+
+                            <!-- color swatch + copy btn -->
+                            <div
+                                class="flex items-center flex-1 ml-4 h-6 rounded-lg overflow-hidden whitespace-nowrap"
+                                :style="{ backgroundColor: item.hex }">
+                                <!-- spacer to fill until icon -->
+                                <span class="flex-1"></span>
+
+                                <!-- copy button -->
+                                <button
+                                    @click="copyHex(item.hex)"
+                                    class="px-2 py-1 hover:bg-white/30 transition"
+                                    :title="`Copy ${item.hex}`">
+                                    <Icon
+                                        name="material-symbols:content-copy"
+                                        size="16"
+                                        class="text-white" />
+                                </button>
+                            </div>
+                        </div>
+                    </td>
                     <td class="border px-4 py-2">{{ item.word }}</td>
                 </tr>
             </tbody>
