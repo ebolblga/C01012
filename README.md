@@ -68,7 +68,7 @@ This mapping was custom made and inspired by:
 | `11`    | `N`           |          |
 | `12`    | `R`           |          |
 
-If you want to expand this table to other alphabets, contributions are welcome! Just add them to `/app/pages/index.vue`.
+If you want to expand this table to other alphabets, contributions are welcome! Just add them to `\app\constants\colorMapping.ts`.
 
 ## Word sources
 - A text file containing 479k English words: [english-words](https://github.com/dwyl/english-words)

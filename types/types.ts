@@ -1,9 +1,9 @@
-export type Result = {
+export type ResultItem = {
     hex: string
     word: string
 }
 
-export enum WordList {
+export enum Languages {
     english = 'english',
     russian = 'russian',
     custom = 'custom',

@@ -15,5 +15,6 @@ export default defineNuxtConfig({
     },
     alias: {
         '@types': resolve(__dirname, './types/types.ts'),
+        '@constants': resolve(__dirname, './app/constants/colorMapping.ts'),
     },
 })
