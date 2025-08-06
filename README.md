@@ -1,4 +1,4 @@
-# #C01012 (COLOR)
+# <span style="background-color: #C01012; color: #FFFFFF; padding-right: 100px">#C01012</span> (COLOR)
 ## Tool to search for spellable words in hexadecimal (HEX) color codes
 
 > The hex-color CSS data type is a notation for describing the hexadecimal color syntax of an sRGB color using its primary color components (red, green, blue) written as hexadecimal numbers, as well as its transparency.
@@ -6,7 +6,7 @@
 Source: [MDN Web Docs <hex-color>](https://developer.mozilla.org/en-US/docs/Web/CSS/hex-color)
 
 Valid syntax for HEX color codes:
-```css
+```text
 #RGB        // The three-value syntax
 #RGBA       // The four-value syntax
 #RRGGBB     // The six-value syntax
@@ -63,6 +63,23 @@ This mapping was custom made and inspired by:
 | `10`    |               | `ю`, `Ю` |
 | `11`    | `N`           |          |
 | `12`    | `R`           |          |
+
+### Setup with [Node.js](https://nodejs.org/en/)
+If you want to try changing the mapping
+```bash
+# install yarn
+npm install --global yarn
+
+# download repository and cd into it
+git clone https://github.com/ebolblga/c010125.git
+cd c010125
+
+# install all dependencies
+yarn
+
+# start project in dev mode
+yarn dev
+```
 
 ## License
 This program is licensed under the MIT License. Please read the License file to know about the usage terms and conditions.
