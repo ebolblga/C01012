@@ -1,12 +1,7 @@
 <script setup lang="ts">
-import type { Languages } from '@types'
-
-const props = defineProps<{
-    modelValue: Languages
-}>()
-const emit = defineEmits<{
-    (e: 'update:modelValue', val: Languages): void
-}>()
+import { Languages, languageOptions } from '@types'
+const props = defineProps<{ modelValue: Languages }>()
+const emit = defineEmits<{ (e: 'update:modelValue', val: Languages): void }>()
 
 function onChange(e: Event) {
     const val = (e.target as HTMLSelectElement).value as Languages
@@ -15,15 +10,21 @@ function onChange(e: Event) {
 </script>
 
 <template>
-    <div class="mb-4">
-        <label for="list-select" class="mr-2 font-medium">Select List:</label>
+    <div class="mb-4 text-text bg-background p-2 rounded">
+        <label for="lang-select" class="mr-2 font-medium"
+            >Language for search:</label
+        >
         <select
-            id="list-select"
-            :value="modelValue"
+            id="lang-select"
+            v-model="props.modelValue"
             @change="onChange"
-            class="px-2 py-1 border rounded">
-            <option value="russian">Russian</option>
-            <option value="english">English</option>
+            class="px-2 py-1 border border-primary bg-background2 text-text rounded">
+            <option
+                v-for="opt in languageOptions"
+                :key="opt.value"
+                :value="opt.value">
+                {{ opt.label }}
+            </option>
         </select>
     </div>
 </template>

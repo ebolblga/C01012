@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { mapping, allowedLengths } from '@constants'
-import { type ResultItem, Languages } from '@types'
+import { type ResultItem, Languages, languageOptions } from '@types'
 import { useLocalStorage } from '@vueuse/core'
 
 useSeoMeta({
@@ -19,11 +19,12 @@ onMounted(() => {
 
 async function loadAndFilter() {
     try {
-        const fileName =
-            selectedLanguage.value === 'russian'
-                ? '/test.txt'
-                : '/englishUTF-8.txt'
-        const res = await fetch(fileName)
+        const selectedOption = languageOptions.find(
+            (o) => o.value === selectedLanguage.value
+        )
+        const filePath = selectedOption?.path ?? null
+        if (!filePath) return
+        const res = await fetch(filePath)
         const text = await res.text()
         const words = text
             .split(/\r?\n/)
@@ -31,6 +32,7 @@ async function loadAndFilter() {
             .filter((w) => w)
 
         const filtered: ResultItem[] = []
+        let index = 0
         for (const word of words) {
             const tokens: string[] = []
             let valid = true
@@ -50,7 +52,8 @@ async function loadAndFilter() {
             const hexBody = tokens.join('')
             if (!allowedLengths.includes(hexBody.length)) continue
 
-            filtered.push({ hex: `#${hexBody}`, word })
+            filtered.push({ id: index, hex: `#${hexBody}`, word })
+            index++
         }
 
         results.value = filtered
@@ -60,8 +63,10 @@ async function loadAndFilter() {
 }
 </script>
 <template>
-    <div>
-        <TheLanguageSelector v-model="selectedLanguage" @change="loadAndFilter" />
+    <div class="min-w-[800px] w-3/4 mx-auto">
+        <TheLanguageSelector
+            v-model="selectedLanguage"
+            @change="loadAndFilter" />
         <TheResultsTable :results="results" />
     </div>
 </template>
