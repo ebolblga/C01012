@@ -68,7 +68,7 @@ This mapping was custom made and inspired by:
 | `11`    | `N`           |          |
 | `12`    | `R`           |          |
 
-If you want to expand this table to other alphabets, contributions are welcome! Just add them to `\app\constants\colorMapping.ts`.
+If you want to expand this table to other alphabets, contributions are welcome! Just add them to `/app/constants/colorMapping.ts`.
 
 ## Word sources
 - A text file containing 479k English words: [english-words](https://github.com/dwyl/english-words)
@@ -91,8 +91,8 @@ If you want to try changing the mapping
 npm install --global yarn
 
 # download repository and cd into it
-git clone https://github.com/ebolblga/c010125.git
-cd c010125
+git clone https://github.com/ebolblga/C01012.git
+cd C01012
 
 # install all dependencies
 yarn
