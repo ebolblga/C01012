@@ -5,7 +5,28 @@ useHead({
     },
     meta: [
         { charset: 'utf-8' },
-        { name: 'C01012 (color)', content: 'Author: ebolblga' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'format-detection', content: 'telephone=no' },
+        { name: 'theme-color', content: '#C01012' },
+        { name: 'msapplication-TileColor', content: '#C01012' },
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
+        { name: 'apple-mobile-web-app-title', content: 'C01012 (COLOR)' },
+        { name: 'application-name', content: 'C01012 (COLOR)' },
+        { name: 'msapplication-TileImage', content: '/favicon.ico' },
+        // Open Graph
+        { property: 'og:type', content: 'website' },
+        { property: 'og:site_name', content: 'C01012 (COLOR)' },
+        { property: 'og:locale', content: 'en_US' },
+        // Twitter Card
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: '@ebolblga' },
+        { name: 'twitter:creator', content: '@ebolblga' },
+        // Additional SEO
+        { name: 'author', content: 'ebolblga' },
+        { name: 'keywords', content: 'hex color codes, hexadecimal colors, color finder, web design, CSS colors, color tools, word to hex, spellable colors' },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'googlebot', content: 'index, follow' },
     ],
     link: [
         {
@@ -20,6 +41,11 @@ useHead({
             href: '/favicon.ico',
             crossorigin: 'anonymous',
         },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon.ico' },
+        { rel: 'manifest', href: '/site.webmanifest' },
+        { rel: 'canonical', href: 'https://c01012.vercel.app' }
     ],
 })
 </script>

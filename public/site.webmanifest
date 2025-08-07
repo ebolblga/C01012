@@ -1,0 +1,20 @@
+{
+    "name": "C01012 (COLOR)",
+    "short_name": "C01012",
+    "description": "Web application to search for spellable words in hexadecimal (HEX) color codes",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#161212",
+    "theme_color": "#C01012",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "any",
+            "type": "image/x-icon"
+        }
+    ],
+    "categories": ["design", "utilities", "productivity"],
+    "lang": "en",
+    "dir": "ltr"
+}

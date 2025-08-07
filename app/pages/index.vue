@@ -1,11 +1,35 @@
 <script setup lang="ts">
-import { mapping, allowedLengths } from '@constants'
+import { mapping } from '@constants'
 import { type ResultItem, Languages, languageOptions } from '@types'
 import { useLocalStorage } from '@vueuse/core'
 import Fuse from 'fuse.js'
 
 useSeoMeta({
-    title: 'C01012 (COLOR)',
+    title: 'C01012 (COLOR) - Find Spellable Words in HEX Color Codes',
+    description: 'Search for words that can be represented as valid hexadecimal (HEX) color codes.',
+    keywords: 'hex color codes, hexadecimal colors, color finder, web design, CSS colors, color tools, word to hex, spellable colors, color search',
+    author: 'ebolblga',
+    robots: 'index, follow',
+    // Open Graph
+    ogTitle: 'C01012 (COLOR) - Find Spellable Words in HEX Color Codes',
+    ogDescription: 'Search for words that can be represented as valid hexadecimal (HEX) color codes.',
+    ogType: 'website',
+    ogUrl: 'https://c01012.vercel.app',
+    ogSiteName: 'C01012 (COLOR)',
+    ogImage: 'https://c01012.vercel.app/og-image.png',
+    ogLocale: 'en_US',
+    // Twitter Card
+    twitterCard: 'summary_large_image',
+    twitterSite: '@ebolblga',
+    twitterCreator: '@ebolblga',
+    twitterTitle: 'C01012 (COLOR) - Find Spellable Words in HEX Color Codes',
+    twitterDescription: 'Search for words that can be represented as valid hexadecimal (HEX) color codes.',
+})
+
+useHead({
+    link: [
+        { rel: 'canonical', href: 'https://c01012.vercel.app' }
+    ],
 })
 
 const selectedLanguage = useLocalStorage<Languages>(
@@ -71,35 +95,56 @@ async function loadAndFilter() {
 }
 </script>
 <template>
-    <div class="w-full max-w-[1200px] min-w-[700px] mx-auto p-4">
+    <main class="w-full max-w-[1200px] min-w-[700px] mx-auto p-4">
         <div class="flex flex-col lg:flex-row gap-4">
-            <div class="w-full lg:w-1/3">
-                <div class="flex items-center text-2xl font-medium italic">
-                    <h1 class="bg-primary pr-24 w-full">#C01012</h1>
-                    <span class="ml-2">(COLOR)</span>
-                </div>
-                <p class="mt-3 mb-3 italic">
-                    Web application to search for spellable words in hexadecimal
-                    (HEX) color codes
-                </p>
-                <NuxtLink to="/about" class="text-accent">{{
-                    '<- Visit about page to learn more'
-                }}</NuxtLink>
-                <TheLanguageSelector
-                    class="mt-6"
-                    v-model="selectedLanguage"
-                    @change="loadAndFilter" />
-                <div class="mt-6">
+            <aside class="w-full lg:w-1/3">
+                <header>
+                    <div class="flex items-center text-2xl font-medium italic">
+                        <h1 class="bg-primary pr-24 w-full">#C01012</h1>
+                        <span class="ml-2">(COLOR)</span>
+                    </div>
+                    <p class="mt-3 mb-3 italic">
+                        Web application to search for spellable words in hexadecimal
+                        (HEX) color codes
+                    </p>
+                    <nav>
+                        <NuxtLink to="/about" class="text-accent">{{
+                            '<- Visit about page to learn more'
+                        }}</NuxtLink>
+                    </nav>
+                </header>
+                <section class="mt-6">
+                    <TheLanguageSelector
+                        v-model="selectedLanguage"
+                        @change="loadAndFilter" />
+                </section>
+                <section class="mt-6">
+                    <label for="search-input" class="sr-only">Search for words</label>
                     <input
+                        id="search-input"
                         type="text"
                         placeholder="Search for word..."
                         v-model="searchText"
                         class="w-full p-2 bg-secondary text-text rounded-sm h-[29px]" />
-                </div>
-            </div>
-            <div class="w-full lg:w-2/3 overflow-auto max-h-[75vh]">
+                </section>
+            </aside>
+            <section class="w-full lg:w-2/3 overflow-auto max-h-[75vh]" aria-label="Search results">
                 <TheResultsTable :results="results" />
-            </div>
+            </section>
         </div>
-    </div>
+    </main>
 </template>
+
+<style scoped>
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+</style>
