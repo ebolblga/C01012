@@ -1,7 +1,9 @@
 import { mapping, allowedLengths } from '@constants'
 
 export function filterWords(text: string): string {
-    const lines = text
+    const cleanedText = text.replace(/[!&',\-\.\/]/g, '')
+
+    const lines = cleanedText
         .split(/\r?\n/)
         .map((w) => w.trim())
         .filter((w) => w)
@@ -28,5 +30,11 @@ export function filterWords(text: string): string {
         filtered.push(word)
     }
 
-    return Array.from(new Set(filtered)).join('\n')
+    const unique = Array.from(new Set(filtered))
+
+    unique.sort((a, b) =>
+        a.localeCompare(b, undefined, { sensitivity: 'base' })
+    )
+
+    return unique.join('\n')
 }

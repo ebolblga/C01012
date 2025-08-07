@@ -10,11 +10,6 @@ export const wordSources: Record<string, string[]> = {
 }
 
 export const mapping: Record<string, string> = {
-    // TODO: remove junk section
-    // Junk
-    ' ': '',
-    '.': '',
-    '-': '',
     // 0
     '0': '0',
     o: '0',
