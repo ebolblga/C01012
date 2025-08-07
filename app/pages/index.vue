@@ -40,42 +40,25 @@ async function loadAndFilter() {
         )
         const filePath = selectedOption?.path ?? null
         if (!filePath) return
+
         const res = await fetch(filePath)
         const text = await res.text()
-        const words = text
+
+        const filteredText = filterWords(text)
+
+        rawResults.value = filteredText
             .split(/\r?\n/)
-            .map((w) => w.trim())
             .filter((w) => w)
-
-        const filtered: ResultItem[] = []
-        let index = 0
-        for (const word of words) {
-            const tokens: string[] = []
-            let valid = true
-
-            for (const char of word) {
-                const symbol = mapping[char]
-                if (!symbol) {
-                    valid = false
-                    break
-                }
-                tokens.push(symbol)
-            }
-
-            // console.log(word, tokens)
-
-            if (!valid) continue
-            const hexBody = tokens.join('')
-            if (!allowedLengths.includes(hexBody.length)) continue
-
-            filtered.push({ id: index, hex: `#${hexBody}`, word })
-            index++
-        }
-
-        rawResults.value = filtered
+            .map((word, index) => {
+                const hexBody = word
+                    .split('')
+                    .map((char) => mapping[char])
+                    .join('')
+                return { id: index, hex: `#${hexBody}`, word }
+            })
 
         // Initialize Fuse
-        fuse = new Fuse(filtered, {
+        fuse = new Fuse(rawResults.value, {
             keys: ['word'],
             includeScore: true,
             threshold: 0.5,

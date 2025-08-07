@@ -1,0 +1,32 @@
+import { mapping, allowedLengths } from '@constants'
+
+export function filterWords(text: string): string {
+    const lines = text
+        .split(/\r?\n/)
+        .map((w) => w.trim())
+        .filter((w) => w)
+    const filtered: string[] = []
+
+    for (const word of lines) {
+        let valid = true
+        const tokens: string[] = []
+
+        for (const char of word) {
+            const symbol = mapping[char]
+            if (!symbol) {
+                valid = false
+                break
+            }
+            tokens.push(symbol)
+        }
+
+        if (!valid) continue
+
+        const hexBody = tokens.join('')
+        if (!allowedLengths.includes(hexBody.length)) continue
+
+        filtered.push(word)
+    }
+
+    return Array.from(new Set(filtered)).join('\n')
+}
