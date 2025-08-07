@@ -9,7 +9,7 @@ useHead({
         { name: 'format-detection', content: 'telephone=no' },
         { name: 'theme-color', content: '#C01012' },
         { name: 'msapplication-TileColor', content: '#C01012' },
-        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        { name: 'mobile-web-app-capable', content: 'yes' },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
         { name: 'apple-mobile-web-app-title', content: 'C01012 (COLOR)' },
         { name: 'application-name', content: 'C01012 (COLOR)' },

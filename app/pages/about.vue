@@ -41,13 +41,11 @@ const md = markdownIt({
 const html = md.render(readmeRaw)
 </script>
 <template>
-    <main>
-        <nav>
+    <main class="w-full max-w-[900px] min-w-[700px] mx-auto">
+        <nav class="mt-3">
             <NuxtLink to="/">{{ '<- Back to main page' }}</NuxtLink>
         </nav>
-        <article
-            class="markdown-body w-full max-w-[1200px] min-w-[700px] mx-auto p-4 pt-6"
-            v-html="html"></article>
+        <article class="markdown-body p-4 pt-10" v-html="html"></article>
     </main>
 </template>
 <style>
@@ -55,5 +53,9 @@ const html = md.render(readmeRaw)
 
 .markdown-body {
     background-color: transparent;
+}
+
+.markdown-body img {
+    display: none;
 }
 </style>

@@ -59,41 +59,69 @@ onMounted(() => {
     loadAndFilter()
 })
 
-async function loadAndFilter() {
-    try {
-        const selectedOption = languageOptions.find(
-            (o) => o.value === selectedLanguage.value
-        )
-        const filePath = selectedOption?.path ?? null
-        if (!filePath) return
-
-        const res = await fetch(filePath)
-        const text = await res.text()
-
-        const filteredText = filterWords(text)
-
-        rawResults.value = filteredText
-            .split(/\r?\n/)
-            .filter((w) => w)
-            .map((word, index) => {
-                const hexBody = word
-                    .split('')
-                    .map((char) => mapping[char])
-                    .join('')
-                return { id: index, hex: `#${hexBody}`, word }
-            })
-
-        // Initialize Fuse
-        fuse = new Fuse(rawResults.value, {
-            keys: ['word'],
-            includeScore: true,
-            threshold: 0.5,
+function processText(text: string) {
+    const filtered = filterWords(text)
+    rawResults.value = filtered
+        .split(/\r?\n/)
+        .filter((w) => w)
+        .map((word, index) => {
+            const hexBody = word
+                .split('')
+                .map((char) => mapping[char])
+                .join('')
+            return { id: index, hex: `#${hexBody}`, word }
         })
 
-        searchText.value = ''
-    } catch (err) {
-        console.error('Error loading or parsing file:', err)
+    fuse = new Fuse(rawResults.value, {
+        keys: ['word'],
+        includeScore: true,
+        threshold: 0.5,
+    })
+    searchText.value = ''
+}
+
+async function loadAndFilter() {
+    if (selectedLanguage.value === Languages.custom) {
+        return
     }
+
+    try {
+        const opt = languageOptions.find(
+            (o) => o.value === selectedLanguage.value
+        )
+        if (!opt?.path) return
+        const res = await fetch(opt.path)
+        const txt = await res.text()
+        processText(txt)
+    } catch (err) {
+        console.error('Error loading file:', err)
+    }
+}
+
+async function handleFileUpload(e: Event) {
+    const files = (e.target as HTMLInputElement).files
+    if (!files || files.length === 0) return
+
+    const file = files[0]
+    try {
+        if (!file) return
+        const txt = await file.text()
+        processText(txt)
+    } catch (err) {
+        console.error('Failed to read file:', err)
+    }
+}
+
+function exportJson() {
+    const data = results.value
+    const json = JSON.stringify(data, null, 2)
+    const blob = new Blob([json], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = 'results.json'
+    a.click()
+    URL.revokeObjectURL(url)
 }
 </script>
 <template>
@@ -120,6 +148,19 @@ async function loadAndFilter() {
                         v-model="selectedLanguage"
                         @change="loadAndFilter" />
                 </section>
+                <section
+                    class="mt-4"
+                    v-if="selectedLanguage === Languages.custom">
+                    <label for="txt-upload" class="block mb-1 font-medium"
+                        >Upload your .txt</label
+                    >
+                    <input
+                        id="txt-upload"
+                        type="file"
+                        accept=".txt"
+                        @change="handleFileUpload"
+                        class="w-full p-2 bg-secondary text-text rounded-sm" />
+                </section>
                 <section class="mt-6">
                     <label for="search-input" class="sr-only"
                         >Search for words</label
@@ -131,16 +172,22 @@ async function loadAndFilter() {
                         v-model="searchText"
                         class="w-full p-2 bg-secondary text-text rounded-sm h-[29px]" />
                 </section>
+                <section>
+                    <button
+                        @click="exportJson"
+                        class="w-full mt-6 py-1 bg-accent text-white rounded-sm hover:bg-accent-dark">
+                        Export JSON
+                    </button>
+                </section>
             </aside>
             <section
-                class="w-full lg:w-2/3 overflow-auto max-h-[75vh]"
+                class="w-full lg:w-2/3 overflow-auto lg:h-[90vh] h-[50vh]"
                 aria-label="Search results">
                 <TheResultsTable :results="results" />
             </section>
         </div>
     </main>
 </template>
-
 <style scoped>
 .sr-only {
     position: absolute;

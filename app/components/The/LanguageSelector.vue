@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { Languages, languageOptions } from '@types'
 const props = defineProps<{ modelValue: Languages }>()
-const emit = defineEmits<{ (e: 'update:modelValue', val: Languages): void }>()
+const emit = defineEmits<{
+    (e: 'update:modelValue', val: Languages): void
+}>()
 
 function onChange(e: Event) {
     const val = (e.target as HTMLSelectElement).value as Languages
