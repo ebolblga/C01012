@@ -1,0 +1,179 @@
+# C01012 (COLOR) - Comprehensive Project Information
+
+## Project Overview
+C01012 (COLOR) is a web application designed to search for words that can be represented as valid hexadecimal (HEX) color codes. The project was inspired by a post on X (formerly Twitter) by @aarexer and builds upon an older project called car-p18s.
+
+## Core Concept
+The application uses a custom mapping system that converts letters to hexadecimal digits, allowing users to find words that can be used as valid CSS color codes. This creates a unique intersection between language and web design.
+
+## Technical Architecture
+
+### Frontend Framework
+- **Nuxt.js 4**: Full-stack Vue.js framework
+- **Vue.js 3.5**: Progressive JavaScript framework
+- **TypeScript**: Type-safe JavaScript
+- **Tailwind CSS**: Utility-first CSS framework
+
+### Key Dependencies
+- **@nuxtjs/tailwindcss**: Tailwind CSS integration
+- **@nuxt/icon**: Icon management
+- **@nuxt/fonts**: Font optimization
+- **@vueuse/core**: Vue composition utilities
+- **Fuse.js**: Fuzzy search library
+- **@nuxtjs/sitemap**: SEO sitemap generation
+- **@nuxtjs/robots**: SEO robots.txt management
+
+### Project Structure
+```
+C01012/
+├── app/
+│   ├── app.vue                 # Main app component
+│   ├── components/             # Vue components
+│   ├── composables/            # Vue composables
+│   ├── constants/              # Application constants
+│   ├── layouts/                # Page layouts
+│   └── pages/                  # Application pages
+├── modules/                    # Custom Nuxt modules
+├── public/                     # Static assets
+├── shared/                     # Shared utilities
+├── types/                      # TypeScript type definitions
+└── nuxt.config.ts             # Nuxt configuration
+```
+
+## HEX Color Code Mapping System
+
+### Valid HEX Syntax
+- `#RGB` - Three-value syntax
+- `#RGBA` - Four-value syntax
+- `#RRGGBB` - Six-value syntax
+- `#RRGGBBAA` - Eight-value syntax
+
+### Custom Letter-to-Hex Mapping
+The application uses a custom mapping inspired by LEET speak and SMS transliteration:
+
+| Symbols | Latin         | Cyrillic |
+| ------- | ------------- | -------- |
+| `0`     | `o`, `O`      | `о`, `О` |
+| `1`     | `l`, `L`, `I` |          |
+| `2`     | `z`, `Z`      |          |
+| `3`     |               | `з`, `З` |
+| `4`     | `h`           | `ч`, `Ч` |
+| `5`     | `s`, `S`      |          |
+| `6`     | `G`           | `б`, `Б` |
+| `7`     | `t`, `T`      |          |
+| `8`     | `X`           |          |
+| `9`     | `g`, `q`      | `д`, `Д` |
+| `a`     | `a`           | `а`      |
+| `b`     | `b`           |          |
+| `c`     | `c`           | `с`      |
+| `d`     | `d`           |          |
+| `e`     | `e`           | `е`      |
+| `f`     | `f`           |          |
+| `A`     | `A`           | `А`      |
+| `B`     | `B`           | `в`, `В` |
+| `C`     | `C`           | `С`      |
+| `D`     | `D`           |          |
+| `E`     | `E`           | `Е`      |
+| `F`     | `F`           |          |
+| `10`    |               | `ю`, `Ю` |
+| `11`    | `N`           |          |
+| `12`    | `R`           |          |
+
+## Word Sources
+- **English words**: 479k words from english-words repository
+- **Russian words**: 1.5m words from russian-words repository
+- **Russian swear words**: 2.8k words from 2yxa
+- **Funny words**: Custom collection from Ahaha-hehehe project
+
+## Key Features
+
+### Search Functionality
+- Real-time fuzzy search using Fuse.js
+- Support for multiple languages (English, Russian)
+- Instant results with color preview
+- Responsive design for all devices
+
+### User Interface
+- Clean, minimalist design
+- Dark theme with accent colors
+- Semantic HTML structure
+- Accessibility features (ARIA labels, screen reader support)
+
+### SEO Optimization
+- Comprehensive meta tags
+- Open Graph and Twitter Card support
+- Structured data (JSON-LD)
+- Sitemap generation
+- Robots.txt configuration
+
+## Example Transformations
+
+### English Words
+- "ass" → #a55 (reddish brown)
+- "Bathesda" → #Ba74e5da (purple with transparency)
+
+### Russian Words
+- "бабоба" → #6a606a (gray)
+- "ебасос" → #ebac0c (orange)
+
+## Development Setup
+
+### Prerequisites
+- Node.js (v20+ recommended)
+- Yarn package manager
+- Git
+
+### Installation
+```bash
+# Clone repository
+git clone https://github.com/ebolblga/C01012.git
+cd C01012
+
+# Install dependencies
+yarn
+
+# Start development server
+yarn dev
+```
+
+### Build Commands
+```bash
+# Development
+yarn dev
+
+# Production build
+yarn build
+
+# Preview production build
+yarn preview
+```
+
+## Deployment
+The application is deployed on Vercel at https://c01012.vercel.app
+
+## License
+MIT License - see LICENSE file for details
+
+## Contributing
+Contributions are welcome! The project accepts:
+- Bug reports
+- Feature requests
+- Code improvements
+- Documentation updates
+- Additional language support
+
+## Related Projects
+- [car-p18s](https://github.com/ebolblga/car-p18s) - Original inspiration
+- [Ahaha-hehehe](https://github.com/ebolblga/Ahaha-hehehe) - Funny word generator
+- [english-words](https://github.com/dwyl/english-words) - English word list
+- [russian-words](https://github.com/danakt/russian-words) - Russian word list
+
+## Technical Notes
+- All HEX color codes generated are valid CSS color values
+- The application supports 3-digit, 4-digit, 6-digit and 8-digit HEX codes
+- Search is case-insensitive and supports fuzzy matching
+- The application is fully responsive and accessible
+
+## Future Enhancements
+- Additional language support
+- More word sources

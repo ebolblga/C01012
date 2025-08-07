@@ -1,0 +1,31 @@
+# C01012 (COLOR)
+
+> Web application to search for spellable words in hexadecimal (HEX) color codes
+
+Project: C01012 (COLOR)
+Description: A web application that finds words that can be represented as valid hexadecimal color codes
+Author: ebolblga
+Repository: https://github.com/ebolblga/C01012
+Live Demo: https://c01012.vercel.app
+
+Key Features:
+- Search for words that can be represented as HEX color codes
+- Support for English and Russian languages
+- Real-time search functionality
+- Color preview for found words
+- HEX number to Latin/Cyrillic symbol mapping
+
+Technology Stack:
+- Nuxt.js 4
+- Vue.js 3.5
+- TypeScript
+- Tailwind CSS
+- Fuse.js for fuzzy search
+
+Examples:
+- "ass" becomes #a55
+- "Bathesda" becomes #Ba74e5da
+- "бабоба" becomes #6a606a
+- "ебасос" becomes #ebac0c
+
+The application maps letters to hexadecimal digits using a custom mapping system, allowing users to find words that can be used as valid CSS color codes.
