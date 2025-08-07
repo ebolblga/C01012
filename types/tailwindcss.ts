@@ -4,6 +4,5 @@ export const colors = {
     primary: '#c01012',
     secondary: '#4d605b',
     accent: '#72a06f',
-    // red: '#c01012',
     white: '#fff',
 }

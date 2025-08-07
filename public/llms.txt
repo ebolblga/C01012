@@ -23,9 +23,12 @@ Technology Stack:
 - Fuse.js for fuzzy search
 
 Examples:
-- "ass" becomes #a55
+- "BIOS" becomes #B105
+- "b1eac4" becomes #b1eac4
 - "Bathesda" becomes #Ba74e5da
+- "database" becomes #da7aba5e
 - "бабоба" becomes #6a606a
+- "давеча" becomes #9aBe4a
 - "ебасос" becomes #ebac0c
 
 The application maps letters to hexadecimal digits using a custom mapping system, allowing users to find words that can be used as valid CSS color codes.

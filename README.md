@@ -3,6 +3,8 @@
 ![Vercel](https://vercelbadge.vercel.app/api/ebolblga/C01012)
 [![DeepWiki](https://img.shields.io/badge/DeepWiki-ebolblga%2FC01012-blue.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAyCAYAAAAnWDnqAAAAAXNSR0IArs4c6QAAA05JREFUaEPtmUtyEzEQhtWTQyQLHNak2AB7ZnyXZMEjXMGeK/AIi+QuHrMnbChYY7MIh8g01fJoopFb0uhhEqqcbWTp06/uv1saEDv4O3n3dV60RfP947Mm9/SQc0ICFQgzfc4CYZoTPAswgSJCCUJUnAAoRHOAUOcATwbmVLWdGoH//PB8mnKqScAhsD0kYP3j/Yt5LPQe2KvcXmGvRHcDnpxfL2zOYJ1mFwrryWTz0advv1Ut4CJgf5uhDuDj5eUcAUoahrdY/56ebRWeraTjMt/00Sh3UDtjgHtQNHwcRGOC98BJEAEymycmYcWwOprTgcB6VZ5JK5TAJ+fXGLBm3FDAmn6oPPjR4rKCAoJCal2eAiQp2x0vxTPB3ALO2CRkwmDy5WohzBDwSEFKRwPbknEggCPB/imwrycgxX2NzoMCHhPkDwqYMr9tRcP5qNrMZHkVnOjRMWwLCcr8ohBVb1OMjxLwGCvjTikrsBOiA6fNyCrm8V1rP93iVPpwaE+gO0SsWmPiXB+jikdf6SizrT5qKasx5j8ABbHpFTx+vFXp9EnYQmLx02h1QTTrl6eDqxLnGjporxl3NL3agEvXdT0WmEost648sQOYAeJS9Q7bfUVoMGnjo4AZdUMQku50McDcMWcBPvr0SzbTAFDfvJqwLzgxwATnCgnp4wDl6Aa+Ax283gghmj+vj7feE2KBBRMW3FzOpLOADl0Isb5587h/U4gGvkt5v60Z1VLG8BhYjbzRwyQZemwAd6cCR5/XFWLYZRIMpX39AR0tjaGGiGzLVyhse5C9RKC6ai42ppWPKiBagOvaYk8lO7DajerabOZP46Lby5wKjw1HCRx7p9sVMOWGzb/vA1hwiWc6jm3MvQDTogQkiqIhJV0nBQBTU+3okKCFDy9WwferkHjtxib7t3xIUQtHxnIwtx4mpg26/HfwVNVDb4oI9RHmx5WGelRVlrtiw43zboCLaxv46AZeB3IlTkwouebTr1y2NjSpHz68WNFjHvupy3q8TFn3Hos2IAk4Ju5dCo8B3wP7VPr/FGaKiG+T+v+TQqIrOqMTL1VdWV1DdmcbO8KXBz6esmYWYKPwDL5b5FA1a0hwapHiom0r/cKaoqr+27/XcrS5UwSMbQAAAABJRU5ErkJggg==)](https://deepwiki.com/ebolblga/C01012)
 
+> **Warning:** I have **not** performed any semantic filtering on the word lists used in this project. Some words may be offensive, inappropriate, or otherwise surprising. Proceed with caution.
+
 Idea for this project was inspired by [@aarexer post on X](https://x.com/aarexer/status/1938841036274413999) (formally known as Twitter) and an older project I worked on - [car-p18s](https://github.com/ebolblga/car-p18s).
 
 ![C01012 user interface](/app/assets/c01012_interface.png)
@@ -83,11 +85,41 @@ If you want to expand this table to other alphabets, contributions are welcome! 
 ## Examples
 Now as a web designer you can put secret funny words on your web pages, like:
 - ass <span style="background-color: #a55; padding: 0px 6px;">#a55</span>
-- Bathesda <span style="background-color: #Ba74e5da; padding: 0px 6px;">#Ba74e5da</span>
+- assholes <span style="background-color: #a55401e5; padding: 0px 6px;">#a55401e5</span>
+- badass <span style="background-color: #bada55; padding: 0px 6px;">#bada55</span>
+- BIOS <span style="background-color: #B105; padding: 0px 6px;">#B105</span>
+- bleach <span style="background-color: #b1eac4; padding: 0px 6px;">#b1eac4</span>
+- boob <span style="background-color: #b00b; padding: 0px 6px;">#b00b</span>
+- Chad <span style="background-color: #C4ad; padding: 0px 6px;">#C4ad</span>
+- database <span style="background-color: #da7aba5e; padding: 0px 6px;">#da7aba5e</span>
+- deed <span style="background-color: #deed; padding: 0px 6px;">#deed</span>
 - бабоба <span style="background-color: #6a606a; padding: 0px 6px;">#6a606a</span>
+- всосав <span style="background-color: #Bc0caB; padding: 0px 6px;">#Bc0caB</span>
+- давеча <span style="background-color: #9aBe4a; padding: 0px 6px;">#9aBe4a</span>
 - ебасос <span style="background-color: #ebac0c; padding: 0px 6px;">#ebac0c</span>
 
 Just look, how beautiful it is on [Realtime Colors](https://www.realtimecolors.com/?colors=aa5555-1a0c0c-eb0c0c-931515-Ba74e5&fonts=Inter-Inter)
+
+## Trivia
+Companies **should** use appropriate colors for their branding:
+- Bathesda <span style="background-color: #Ba74e5da; padding: 0px 6px;">#Ba74e5da</span>
+- CocaCola <span style="background-color: #C0caC01a; padding: 0px 6px;">#C0caC01a</span>
+- Google <span style="background-color: #60091e; padding: 0px 6px;">#60091e</span>
+
+"cold" and "hot" have their semantic coloring mixed up:
+- cold <span style="background-color: #c01d; padding: 0px 6px;">#c01d</span>
+- hot <span style="background-color: #407; padding: 0px 6px;">#407</span>
+
+Word "colossal" is actually colossal: longest valid HEX code as well as word itself:
+- colossal <span style="background-color: #c01055a1; padding: 0px 6px;">#c01055a1</span>
+
+Writing word "doable" in HEX color code, is it doable?
+- doable <span style="background-color: #d0ab1e; padding: 0px 6px;">#d0ab1e</span>
+
+Teal Sabbaths:
+- Sabbaths <span style="background-color: #5abba745; padding: 0px 6px;">#5abba745</span>
+
+I ran complete list of Wordle (game about guessing words) words (5 letters) and none of them pass the filter.
 
 ## Setup with [Node.js](https://nodejs.org/en/)
 If you want to try changing the mapping
