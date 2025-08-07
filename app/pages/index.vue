@@ -6,13 +6,16 @@ import Fuse from 'fuse.js'
 
 useSeoMeta({
     title: 'C01012 (COLOR) - Find Spellable Words in HEX Color Codes',
-    description: 'Search for words that can be represented as valid hexadecimal (HEX) color codes.',
-    keywords: 'hex color codes, hexadecimal colors, color finder, web design, CSS colors, color tools, word to hex, spellable colors, color search',
+    description:
+        'Search for words that can be represented as valid hexadecimal (HEX) color codes.',
+    keywords:
+        'hex color codes, hexadecimal colors, color finder, web design, CSS colors, color tools, word to hex, spellable colors, color search',
     author: 'ebolblga',
     robots: 'index, follow',
     // Open Graph
     ogTitle: 'C01012 (COLOR) - Find Spellable Words in HEX Color Codes',
-    ogDescription: 'Search for words that can be represented as valid hexadecimal (HEX) color codes.',
+    ogDescription:
+        'Search for words that can be represented as valid hexadecimal (HEX) color codes.',
     ogType: 'website',
     ogUrl: 'https://c01012.vercel.app',
     ogSiteName: 'C01012 (COLOR)',
@@ -23,13 +26,12 @@ useSeoMeta({
     twitterSite: '@ebolblga',
     twitterCreator: '@ebolblga',
     twitterTitle: 'C01012 (COLOR) - Find Spellable Words in HEX Color Codes',
-    twitterDescription: 'Search for words that can be represented as valid hexadecimal (HEX) color codes.',
+    twitterDescription:
+        'Search for words that can be represented as valid hexadecimal (HEX) color codes.',
 })
 
 useHead({
-    link: [
-        { rel: 'canonical', href: 'https://c01012.vercel.app' }
-    ],
+    link: [{ rel: 'canonical', href: 'https://c01012.vercel.app' }],
 })
 
 const selectedLanguage = useLocalStorage<Languages>(
@@ -104,8 +106,8 @@ async function loadAndFilter() {
                         <span class="ml-2">(COLOR)</span>
                     </div>
                     <p class="mt-3 mb-3 italic">
-                        Web application to search for spellable words in hexadecimal
-                        (HEX) color codes
+                        Web application to search for spellable words in
+                        hexadecimal (HEX) color codes
                     </p>
                     <nav>
                         <NuxtLink to="/about" class="text-accent">{{
@@ -119,7 +121,9 @@ async function loadAndFilter() {
                         @change="loadAndFilter" />
                 </section>
                 <section class="mt-6">
-                    <label for="search-input" class="sr-only">Search for words</label>
+                    <label for="search-input" class="sr-only"
+                        >Search for words</label
+                    >
                     <input
                         id="search-input"
                         type="text"
@@ -128,7 +132,9 @@ async function loadAndFilter() {
                         class="w-full p-2 bg-secondary text-text rounded-sm h-[29px]" />
                 </section>
             </aside>
-            <section class="w-full lg:w-2/3 overflow-auto max-h-[75vh]" aria-label="Search results">
+            <section
+                class="w-full lg:w-2/3 overflow-auto max-h-[75vh]"
+                aria-label="Search results">
                 <TheResultsTable :results="results" />
             </section>
         </div>
