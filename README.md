@@ -68,7 +68,7 @@ This mapping was custom made and inspired by:
 | `11`    | `N`           |          |
 | `12`    | `R`           |          |
 
-If you want to expand this table to other alphabets, contributions are welcome! Just add them to `/app/constants/colorMapping.ts`.
+If you want to expand this table to other alphabets, contributions are welcome! Just add them to `/app/constants/colorMapping.ts`. You can add more word lists there too.
 
 ## Word sources
 - A text file containing 479k English words: [english-words](https://github.com/dwyl/english-words)
@@ -78,26 +78,57 @@ If you want to expand this table to other alphabets, contributions are welcome! 
 
 ## Examples
 Now as a web designer you can put secret funny words on your web pages, like:
-- ass #a55
-- Bathesda #Ba74e5da
-- ебасос #ebac0c
+- ass <span style="background-color: #a55; padding: 0px 6px;">#a55</span>
+- Bathesda <span style="background-color: #Ba74e5da; padding: 0px 6px;">#Ba74e5da</span>
+- бабоба <span style="background-color: #6a606a; padding: 0px 6px;">#6a606a</span>
+- ебасос <span style="background-color: #ebac0c; padding: 0px 6px;">#ebac0c</span>
 
 Just look, how beautiful it is on [Realtime Colors](https://www.realtimecolors.com/?colors=aa5555-1a0c0c-eb0c0c-931515-Ba74e5&fonts=Inter-Inter)
 
 ## Setup with [Node.js](https://nodejs.org/en/)
 If you want to try changing the mapping
 ```bash
-# install yarn
+# ------------------------------------------
+# Prerequisites
+# ------------------------------------------
+
+# Linux (Debian/Ubuntu example):
+# 1. Install Node.js (v20+ recommended)
+sudo apt update
+sudo apt install -y curl
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install -y nodejs
+
+# 2. Install Git (if not installed)
+sudo apt install -y git
+
+# 3. Install Yarn globally via npm
 npm install --global yarn
 
-# download repository and cd into it
+# ------------------------------------------
+# Windows (PowerShell as Administrator)
+# ------------------------------------------
+# 1. Install Node.js:
+#    Download and install from https://nodejs.org/en/download/
+#
+# 2. Install Git:
+#    Download and install from https://git-scm.com/download/win
+#
+# 3. Open a new PowerShell window and install Yarn globally:
+# npm install --global yarn
+
+# ------------------------------------------
+# Project Setup
+# ------------------------------------------
+
+# Clone the repository and navigate into it
 git clone https://github.com/ebolblga/C01012.git
 cd C01012
 
-# install all dependencies
+# Install all dependencies
 yarn
 
-# start project in dev mode
+# Start the project in development mode
 yarn dev
 ```
 

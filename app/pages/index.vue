@@ -78,10 +78,13 @@ async function loadAndFilter() {
                     <h1 class="bg-primary pr-24 w-full">#C01012</h1>
                     <span class="ml-2">(COLOR)</span>
                 </div>
-                <p class="mt-3 italic">
+                <p class="mt-3 mb-3 italic">
                     Web application to search for spellable words in hexadecimal
                     (HEX) color codes
                 </p>
+                <NuxtLink to="/about" class="text-accent">{{
+                    '<- Visit about page to learn more'
+                }}</NuxtLink>
                 <TheLanguageSelector
                     class="mt-6"
                     v-model="selectedLanguage"

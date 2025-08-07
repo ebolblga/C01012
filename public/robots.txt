@@ -1,5 +1,8 @@
-User-Agent: *
+User-agent: *
 Allow: /
+
+Disallow: /englishUTF-8.txt
+Disallow: /russianUTF-8.txt
 
 # GitHub Pages hosted single-page application
 # All content is publicly accessible
