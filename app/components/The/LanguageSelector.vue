@@ -18,7 +18,7 @@ function onChange(e: Event) {
             id="lang-select"
             v-model="props.modelValue"
             @change="onChange"
-            class="px-3 py-1 bg-secondary rounded outline-none">
+            class="mt-3 px-3 py-1 w-full bg-secondary rounded outline-none">
             <option
                 v-for="opt in languageOptions"
                 :key="opt.value"

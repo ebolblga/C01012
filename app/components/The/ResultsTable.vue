@@ -9,10 +9,14 @@ const props = defineProps<{ results: ResultItem[] }>()
 <template>
     <table class="w-full table-auto border-separate border-spacing-0">
         <thead class="sticky top-0 z-10">
-        <tr>
-            <th class="px-4 py-2 border border-secondary bg-background">Hex Code</th>
-            <th class="px-4 py-2 border border-secondary bg-background">Original Word</th>
-        </tr>
+            <tr>
+                <th class="px-4 py-2 border border-secondary bg-background">
+                    Hex Code
+                </th>
+                <th class="px-4 py-2 border border-secondary bg-background">
+                    Original Word
+                </th>
+            </tr>
         </thead>
         <!-- <tbody v-if="results.length">
             <RecycleScroller
