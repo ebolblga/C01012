@@ -63,10 +63,23 @@ async function loadAndFilter() {
 }
 </script>
 <template>
-    <div class="min-w-[800px] w-3/4 mx-auto">
-        <TheLanguageSelector
-            v-model="selectedLanguage"
-            @change="loadAndFilter" />
-        <TheResultsTable :results="results" />
+    <div class="w-full max-w-[1200px] min-w-[700px] mx-auto p-4">
+        <div class="flex flex-col lg:flex-row gap-4">
+            <div class="w-full lg:w-1/3">
+                <div class="flex items-center text-2xl font-medium italic">
+                    <h1 class="bg-primary pr-24 w-full">#C01012</h1>
+                    <span class="ml-2">(COLOR)</span>
+                </div>
+                <p class="mt-3 italic">Web application to search for spellable words in hexadecimal (HEX) color codes</p>
+                <TheLanguageSelector
+                    class="mt-6"
+                    v-model="selectedLanguage"
+                    @change="loadAndFilter" />
+            </div>
+            <div
+                class="w-full lg:w-2/3 overflow-auto max-h-[75vh]">
+                <TheResultsTable :results="results" />
+            </div>
+        </div>
     </div>
 </template>

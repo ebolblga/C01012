@@ -10,7 +10,7 @@ function onChange(e: Event) {
 </script>
 
 <template>
-    <div class="mb-4 text-text bg-background p-2 rounded">
+    <div class="mb-4 rounded">
         <label for="lang-select" class="mr-2 font-medium"
             >Language for search:</label
         >
@@ -18,7 +18,7 @@ function onChange(e: Event) {
             id="lang-select"
             v-model="props.modelValue"
             @change="onChange"
-            class="px-2 py-1 border border-primary bg-background2 text-text rounded">
+            class="px-3 py-1 bg-secondary rounded outline-none">
             <option
                 v-for="opt in languageOptions"
                 :key="opt.value"

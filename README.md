@@ -1,5 +1,5 @@
 # <span style="background-color: #C01012; color: #FFFFFF; padding-right: 100px">#C01012</span> (COLOR)
-## Tool to search for spellable words in hexadecimal (HEX) color codes
+## Web application to search for spellable words in hexadecimal (HEX) color codes
 
 Idea for this project was inspired by [@aarexer post on X](https://x.com/aarexer/status/1938841036274413999) (formally known as Twitter) and an older project I worked on - [car-p18s](https://github.com/ebolblga/car-p18s).
 

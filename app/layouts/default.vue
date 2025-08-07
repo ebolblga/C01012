@@ -24,7 +24,7 @@ useHead({
 })
 </script>
 <template>
-    <div class="m-0 p-3 bg-background h-screen text-text">
+    <div class="m-0 p-3 bg-background text-text">
         <slot />
     </div>
 </template>
@@ -32,7 +32,7 @@ useHead({
 body {
     font-size: 14px;
     font-family: Fara Code;
-    background-color: #282828;
+    background-color: #161212;
 }
 
 @font-face {

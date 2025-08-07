@@ -5,7 +5,7 @@ const emits = defineEmits<{}>()
 </script>
 <template>
     <tr>
-        <td class="border px-4 py-2">
+        <td class="border border-secondary px-4 py-2">
             <div class="flex items-center">
                 <span>{{ item.hex }}</span>
                 <button
@@ -20,6 +20,6 @@ const emits = defineEmits<{}>()
                 </button>
             </div>
         </td>
-        <td class="border px-4 py-2">{{ item.word }}</td>
+        <td class="border border-secondary px-4 py-2">{{ item.word }}</td>
     </tr>
 </template>

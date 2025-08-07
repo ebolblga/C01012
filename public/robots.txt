@@ -1,2 +1,5 @@
 User-Agent: *
-Disallow:
+Allow: /
+
+# GitHub Pages hosted single-page application
+# All content is publicly accessible
