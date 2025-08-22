@@ -125,7 +125,8 @@ function exportJson() {
 }
 </script>
 <template>
-    <main class="w-full max-w-[1200px] min-w-[700px] mx-auto p-4">
+    <main class="w-full max-w-[1200px] mx-auto p-4">
+        <BaseGitIcon />
         <div class="flex flex-col lg:flex-row gap-4">
             <aside class="w-full lg:w-1/3">
                 <header>
@@ -181,7 +182,7 @@ function exportJson() {
                 </section>
             </aside>
             <section
-                class="w-full lg:w-2/3 overflow-auto lg:h-[90vh] h-[50vh]"
+                class="w-full lg:w-2/3 overflow-auto lg:h-[90vh] h-[55vh]"
                 aria-label="Search results">
                 <TheResultsTable :results="results" />
             </section>
