@@ -41,7 +41,7 @@ const md = markdownIt({
 const html = md.render(readmeRaw)
 </script>
 <template>
-    <main class="w-full max-w-[900px] min-w-[700px] mx-auto">
+    <main class="w-full max-w-[900px] mx-auto">
         <BaseGitIcon />
         <nav class="mt-3">
             <NuxtLink class="text-accent" to="/">{{ '<- Back to main page' }}</NuxtLink>
