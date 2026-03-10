@@ -59,7 +59,6 @@ useHead({
             href: '/favicon.ico',
         },
         { rel: 'manifest', href: '/site.webmanifest' },
-        { rel: 'canonical', href: 'https://c01012.vercel.app' },
     ],
 })
 </script>

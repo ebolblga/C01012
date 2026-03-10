@@ -8,7 +8,6 @@ export default defineNuxtConfig({
         '@nuxt/icon',
         '@nuxt/fonts',
         '@vueuse/nuxt',
-        '@nuxtjs/sitemap',
         '@nuxtjs/robots',
         resolve(__dirname, 'modules/get-word-lists.ts'),
     ],
@@ -33,23 +32,11 @@ export default defineNuxtConfig({
             'Web application to search for spellable words in hexadecimal (HEX) color codes. Find words that can be represented as valid HEX color codes.',
         defaultLocale: 'en',
     },
-    // sitemap: {
-    //     hostname: 'https://c01012.vercel.app',
-    //     urls: [
-    //         {
-    //             loc: '/',
-    //             lastmod: new Date().toISOString(),
-    //             changefreq: 'weekly',
-    //             priority: 1.0,
-    //         },
-    //         {
-    //             loc: '/about',
-    //             lastmod: new Date().toISOString(),
-    //             changefreq: 'monthly',
-    //             priority: 0.8,
-    //         },
-    //     ],
-    // },
+    // Block word-list .txt files from indexing (belt-and-suspenders with robots.txt)
+    routeRules: {
+        '/englishUTF-8.txt': { headers: { 'X-Robots-Tag': 'noindex, nofollow' } },
+        '/russianUTF-8.txt': { headers: { 'X-Robots-Tag': 'noindex, nofollow' } },
+    },
     app: {
         head: {
             htmlAttrs: {
